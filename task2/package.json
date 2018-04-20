@@ -1,0 +1,20 @@
+{
+  "name": "task2",
+  "version": "1.0.0",
+  "description": "Task 2 react mentoring",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Guilherme Waess",
+  "license": "ISC",
+  "dependencies": {
+    "react": "^16.3.2",
+    "react-redux": "^5.0.7",
+    "react-router": "^4.2.0",
+    "redux": "^4.0.0"
+  },
+  "devDependencies": {
+    "jest": "^22.4.3"
+  }
+}
