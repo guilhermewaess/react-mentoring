@@ -6,9 +6,9 @@
   "scripts": {
     "start": "npm run dev",
     "build": "npm run prod",
-    "prod": "./node_modules/.bin/webpack --config ./build/webpack.prod.config.js",
-    "dev": "./node_modules/.bin/webpack-dev-server --config ./build/webpack.dev.config.js",
-    "test": "./node_modules/.bin/jest"
+    "prod": "webpack --config ./build/webpack.prod.config.js",
+    "dev": "webpack-dev-server --config ./build/webpack.dev.config.js",
+    "test": "jest"
   },
   "author": "Guilherme Waess",
   "license": "ISC",
