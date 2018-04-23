@@ -2,7 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-const parentDir = path.join(__dirname, '../');
+const parentDir = process.cwd();
 
 module.exports = {
   entry: path.join(parentDir, '/src/index.js'),
