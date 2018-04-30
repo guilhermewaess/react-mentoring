@@ -1,13 +1,15 @@
 import * as React from 'react';
-import { Jumbotron } from 'reactstrap';
 import './Header.scss';
 
 export class Header extends React.Component {
   public render() {
     return (
-      <Jumbotron fluid={true} className="mb-0">
-          <h1>TESTE</h1>
-      </Jumbotron>
+      <div className=' movies-header'>
+        <div>Netflixroulette</div>
+        <div className="d-flex flex-column justify-content-center">
+          <div className='align-self-center'>SIR</div>
+        </div>
+      </div>
     );
   }
 }

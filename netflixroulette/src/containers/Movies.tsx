@@ -6,7 +6,7 @@ import { MoviesList } from './../movies/MoviesList';
 
 export default () => {
   return (
-    <div>
+    <div className='w-100 h-100'>
       <Header />
       <FilterResults />
       <Container fluid={true}>
