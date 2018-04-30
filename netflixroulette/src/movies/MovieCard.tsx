@@ -6,6 +6,7 @@ export default (props: any) => (
     <CardImg
       top={true}
       width="100%"
+      height="400px"
       src={props.movie.poster_path}
       alt="Movie Image"
     />
