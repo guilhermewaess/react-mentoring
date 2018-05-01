@@ -11,7 +11,7 @@ const RootRedirect = () => <Redirect to="/movies" />;
 class App extends React.Component {
   public render() {
     return (
-      <Container fluid={true}>
+      <Container fluid={true} className="p-0 m-0 fixed-top">
         <ErrorBoundary>
           <Router>
             <div className="app">
