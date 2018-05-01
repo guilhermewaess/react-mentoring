@@ -1,5 +1,11 @@
 .movies-header{
   height: 400px;
-  background: url('/lacasadepapel.jpg') no-repeat center;
+  background: url('/background-header.jpg') no-repeat center;
   background-size: cover;
+
+  .search-input{
+    input[type="text"]{
+      height: 35px;
+    }
+  }
 }
