@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Col, Container, Row } from 'reactstrap';
+import { Button, Col, Container, Row } from 'reactstrap';
 import './Header.scss';
 
 const SearchInput = () => (
@@ -28,6 +28,15 @@ export class Header extends React.Component {
             className="align-self-center text-white"
           >
             <SearchInput />
+            <Button
+              outline={true}
+              className="search-button 
+                         mt-1
+                         w-20
+                         float-right"
+            >
+              Search
+            </Button>
           </Col>
         </Row>
       </Container>
