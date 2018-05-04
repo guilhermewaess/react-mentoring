@@ -6,10 +6,10 @@ import {
   RouteProps,
 } from 'react-router-dom';
 
-import Movies from './../containers/Movies';
+import MovieDetails from '../containers/MovieDetails';
 
 export default ({ match }: RouteComponentProps<RouteProps>) => (
   <Router>
-      <Route exatc={true} path={match.url} component={Movies} />
+    <Route exatc={true} path={`${match.url}/:id`} component={MovieDetails} />
   </Router>
 );
