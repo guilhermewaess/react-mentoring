@@ -1,5 +1,10 @@
 import * as React from 'react';
-import { BrowserRouter as Router, Redirect, Route } from 'react-router-dom';
+import {
+  BrowserRouter as Router,
+  Redirect,
+  Route,
+  Switch,
+} from 'react-router-dom';
 import { Container } from 'reactstrap';
 import './App.scss';
 
@@ -16,9 +21,11 @@ class App extends React.Component {
         <ErrorBoundary>
           <Router>
             <div className="app">
-              <Route exact={true} path="/" component={RootRedirect} />
-              <Route path="/movies" component={MoviesView} />
-              <Route path="/movie-details" component={MovieDetailsView} />
+              <Switch>
+                <Route exact={true} path="/" component={RootRedirect} />
+                <Route path="/movies" component={MoviesView} />
+                <Route path="/movie-details" component={MovieDetailsView} />
+              </Switch>
             </div>
           </Router>
         </ErrorBoundary>

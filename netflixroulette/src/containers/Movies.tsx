@@ -1,11 +1,11 @@
 import * as React from 'react';
-import { Container } from 'reactstrap';
+import { IMovie } from '../core/interfaces';
+import MoviesList from './../core/MoviesList';
 import { FilterResults } from './../movies/FilterResults';
 import { Header } from './../movies/Header';
-import { MoviesList } from './../movies/MoviesList';
 
 interface IState {
-  movies: any[];
+  movies: IMovie[];
 }
 
 export default class MoviesContainer extends React.Component {
@@ -84,9 +84,7 @@ export default class MoviesContainer extends React.Component {
       <div className="w-100 h-100">
         <Header />
         <FilterResults movies={this.state.movies} />
-        <Container fluid={true}>
-          <MoviesList movies={this.state.movies} />
-        </Container>
+        <MoviesList movies={this.state.movies} />
       </div>
     );
   }
