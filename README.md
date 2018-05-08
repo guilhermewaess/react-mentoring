@@ -1,6 +1,9 @@
-React Mentoring
+# React Mentoring
 
-Next steps:
+##### Next steps:
 
-[] Unit tests
-[] State Management
+- [x] Components
+- [x] Routing
+- [ ] Unit tests
+- [ ] State Management
+- [ ] Server Side Rendering
