@@ -1,17 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ErrorBoundary when component catch an error should render with state.hasError true 1`] = `
-<ErrorBoundary>
-  <h1>
-    Ops
-  </h1>
-</ErrorBoundary>
+<h1>
+  Ops
+</h1>
 `;
 
 exports[`ErrorBoundary when construct should render with state.hasError false 1`] = `
-<ErrorBoundary>
-  <div>
-    Children
-  </div>
-</ErrorBoundary>
+<div>
+  Children
+</div>
 `;
