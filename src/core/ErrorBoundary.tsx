@@ -4,7 +4,7 @@ interface IState {
   hasError: boolean;
 }
 
-export default class ErrorBoundary extends React.Component {
+export default class ErrorBoundary extends React.Component<any, IState> {
   public state: IState;
 
   constructor(props: any) {

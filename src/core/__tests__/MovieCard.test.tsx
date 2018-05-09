@@ -37,5 +37,9 @@ describe('MovieCard', () => {
     it('should render', () => {
       expect(shallowToJson(component)).toMatchSnapshot();
     });
+    it('should render one badge for every genre', () => {
+      const genres = component.find('MovieGenres').shallow();
+      expect(genres).toMatchSnapshot();
+    });
   });
 });

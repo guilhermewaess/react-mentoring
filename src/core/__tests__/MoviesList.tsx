@@ -35,7 +35,8 @@ describe('MoviesList', () => {
       component = shallow(<MoviesList movies={movies} />);
     });
     it('should render with NoFilmsFound', () => {
-      expect(shallowToJson(component)).toMatchSnapshot();
+      const noFilmsFound = component.find('NoFilmsFound').shallow();
+      expect(shallowToJson(noFilmsFound)).toMatchSnapshot();
     });
   });
   describe('when have movies', () => {

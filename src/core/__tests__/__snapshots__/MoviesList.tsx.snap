@@ -1,6 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`MoviesList when dont have movies should render with NoFilmsFound 1`] = `<NoFilmsFound />`;
+exports[`MoviesList when dont have movies should render with NoFilmsFound 1`] = `
+<h2>
+  No films found
+</h2>
+`;
 
 exports[`MoviesList when have movies should render a list of MovieCard 1`] = `
 <Container

@@ -34,7 +34,7 @@ export default class MovieDetails extends React.Component<any> {
       <div className="w-100 h-100">
         <Header movie={this.state.movie} />
         <FilmsBy movie={this.state.movie} />
-        <MoviesList movies={[this.state.movie]} match={this.props.match} />
+        <MoviesList movies={[this.state.movie]} />
       </div>
     );
   }
