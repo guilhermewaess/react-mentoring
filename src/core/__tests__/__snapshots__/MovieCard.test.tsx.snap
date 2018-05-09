@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MovieCard when construct should render 1`] = `
+<div
+  className="movie-card"
+>
+  <NavLink
+    activeClassName="active"
+    ariaCurrent="true"
+    to="movie-details/287947"
+  >
+    <Card
+      tag="div"
+    >
+      <CardImg
+        alt="Movie Image"
+        height="400px"
+        src="https://image.tmdb.org/t/p/w500/yUOJHa9XmB1H0iYodG9Kb3YCc9T.jpg"
+        tag="img"
+        top={true}
+        width="100%"
+      />
+      <CardBody
+        tag="div"
+      >
+        <CardTitle
+          tag="h5"
+        >
+          Shazam!
+        </CardTitle>
+        <CardSubtitle
+          tag="h6"
+        >
+          <MovieGenres
+            genres={
+              Array [
+                "Action",
+                "Adventure",
+                "Fantasy",
+                "Science Fiction",
+              ]
+            }
+          />
+        </CardSubtitle>
+      </CardBody>
+    </Card>
+  </NavLink>
+</div>
+`;

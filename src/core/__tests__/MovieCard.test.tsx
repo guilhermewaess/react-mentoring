@@ -1,16 +1,16 @@
+import { shallow, ShallowWrapper } from 'enzyme';
+import { shallowToJson } from 'enzyme-to-json';
 import * as React from 'react';
-import { ICommonState } from '../core/interfaces';
-import Header from '../movieDetails/Header';
-import MoviesList from './../core/MoviesList';
-import FilmsBy from './FilmsBy';
+import { IMovie } from '../interfaces';
+import MovieCard from './../MovieCard';
 
-export default class MovieDetails extends React.Component<any> {
-  public state: ICommonState;
+describe('MovieCard', () => {
+  let component: ShallowWrapper;
+  let movie: IMovie;
 
-  constructor(props: any) {
-    super(props);
-    this.state = {
-      movie: {
+  const helper = {
+    createMovie(): IMovie {
+      return {
         budget: 1,
         genres: ['Action', 'Adventure', 'Fantasy', 'Science Fiction'],
         id: 287947,
@@ -25,17 +25,17 @@ export default class MovieDetails extends React.Component<any> {
         title: 'Shazam!',
         vote_average: 0,
         vote_count: 5,
-      },
-    };
-  }
+      };
+    },
+  };
+  beforeEach(() => {
+    movie = helper.createMovie();
+    component = shallow(<MovieCard movie={movie} />);
+  });
 
-  public render() {
-    return (
-      <div className="w-100 h-100">
-        <Header movie={this.state.movie} />
-        <FilmsBy movie={this.state.movie} />
-        <MoviesList movies={[this.state.movie]} match={this.props.match} />
-      </div>
-    );
-  }
-}
+  describe('when construct', () => {
+    it('should render', () => {
+      expect(shallowToJson(component)).toMatchSnapshot();
+    });
+  });
+});
