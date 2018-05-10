@@ -17,7 +17,7 @@ const SearchInput = () => (
   </div>
 );
 
-export class Header extends React.Component {
+export default class Header extends React.Component {
   public render() {
     return (
       <Container fluid={true} className="movies-header">

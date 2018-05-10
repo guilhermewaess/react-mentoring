@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Movies FilterResults when construct should render MoviesFound properly 1`] = `
+<div>
+  0
+   Movies found
+</div>
+`;
+
+exports[`Movies FilterResults when construct should render SortyBy properly 1`] = `
+<div>
+  Sort by:
+  <select
+    id=""
+    name=""
+  >
+    <option>
+      Release
+    </option>
+  </select>
+</div>
+`;
+
+exports[`Movies FilterResults when construct should render component 1`] = `
+<Container
+  tag="div"
+>
+  <Row
+    className="justify-content-between pt-2 pb-2"
+    tag="div"
+  >
+    <MoviesFound
+      movies={Array []}
+    />
+    <SortBy />
+  </Row>
+</Container>
+`;

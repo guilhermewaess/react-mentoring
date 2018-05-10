@@ -18,8 +18,8 @@ const SortBy = () => (
   </div>
 );
 
-export class FilterResults extends React.Component<IProps> {
-  constructor(props: any) {
+export default class FilterResults extends React.Component<IProps> {
+  constructor(props: IProps) {
     super(props);
   }
 
