@@ -107,7 +107,7 @@
     ],
     "globals": {
       "ts-jest": {
-        "tsConfigFile": "C:\\projects\\react-mentoring\\tsconfig.test.json"
+        "tsConfigFile": "tsconfig.test.json"
       }
     }
   },
