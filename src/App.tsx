@@ -12,8 +12,6 @@ import ErrorBoundary from './core/ErrorBoundary';
 import MovieDetailsView from './views/MovieDetailsView';
 import MoviesView from './views/MoviesView';
 
-const RootRedirect = () => <Redirect to="/movies" />;
-
 class App extends React.Component {
   public render() {
     return (
@@ -22,9 +20,9 @@ class App extends React.Component {
           <Router>
             <div className="app">
               <Switch>
-                <Route exact={true} path="/" component={RootRedirect} />
                 <Route path="/movies" component={MoviesView} />
                 <Route path="/movie-details" component={MovieDetailsView} />
+                <Redirect from='/' to='/movies' />
               </Switch>
             </div>
           </Router>

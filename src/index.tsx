@@ -5,6 +5,7 @@ import App from './App';
 import './index.scss';
 import registerServiceWorker from './registerServiceWorker';
 
+/* istanbul ignore file */
 ReactDOM.render(
   <App />,
   document.getElementById('root') as HTMLElement

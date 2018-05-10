@@ -14,16 +14,16 @@ exports[`App should render 1`] = `
         <Switch>
           <Route
             component={[Function]}
-            exact={true}
-            path="/"
-          />
-          <Route
-            component={[Function]}
             path="/movies"
           />
           <Route
             component={[Function]}
             path="/movie-details"
+          />
+          <Redirect
+            from="/"
+            push={false}
+            to="/movies"
           />
         </Switch>
       </div>
