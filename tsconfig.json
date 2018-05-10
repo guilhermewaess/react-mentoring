@@ -25,7 +25,7 @@
     "webpack",
     "jest",
     "src/setupTests.ts",
-    "*/**/__tests__",
-    "coverage"
+    "coverage",
+    "cypress"
   ]
 }

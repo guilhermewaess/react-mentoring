@@ -1,7 +1,6 @@
 import { shallow, ShallowWrapper } from 'enzyme';
 import { shallowToJson } from 'enzyme-to-json';
 import * as React from 'react';
-import { IMovie } from '../../core/interfaces';
 import Movies from './../Movies';
 
 describe('Movies', () => {
