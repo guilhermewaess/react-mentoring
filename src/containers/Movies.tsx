@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { IMovie } from '../core/interfaces';
 import MoviesList from './../core/MoviesList';
-import { FilterResults } from './../movies/FilterResults';
-import { Header } from './../movies/Header';
+import FilterResults from './../movies/FilterResults';
+import Header from './../movies/Header';
 
 interface IState {
   movies: IMovie[];

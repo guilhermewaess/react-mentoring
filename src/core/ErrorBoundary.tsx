@@ -4,7 +4,7 @@ interface IState {
   hasError: boolean;
 }
 
-export default class ErrorBoundary extends React.Component {
+export default class ErrorBoundary extends React.Component<any, IState> {
   public state: IState;
 
   constructor(props: any) {
@@ -14,8 +14,6 @@ export default class ErrorBoundary extends React.Component {
 
   public componentDidCatch(error: any, errorInfo: any) {
     this.setState({ hasError: true });
-    // tslint:disable-next-line
-    console.log('Ups!', error, errorInfo);
   }
 
   public render() {

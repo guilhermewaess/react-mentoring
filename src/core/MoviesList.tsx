@@ -3,9 +3,13 @@ import { Col, Container, Row } from 'reactstrap';
 import { IMovie } from './interfaces';
 import MovieCard from './MovieCard';
 
+interface IProps {
+  movies: IMovie[];
+}
+
 const NoFilmsFound = () => <h2>No films found</h2>;
 
-export default ({ movies, match }: any) => {
+export default ({ movies }: IProps) => {
   if (!movies.length) {
     return <NoFilmsFound />;
   }

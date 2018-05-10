@@ -16,7 +16,7 @@ const MovieGenres = ({ genres }: { genres: string[] }) => (
   </div>
 );
 
-export default ({ match, movie }: any) => (
+export default ({ movie }: any) => (
   <div className="movie-card">
     <NavLink to={`movie-details/${movie.id}`}>
       <Card>

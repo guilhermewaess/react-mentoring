@@ -1,9 +1,16 @@
+import { shallow, ShallowWrapper } from 'enzyme';
+import { shallowToJson } from 'enzyme-to-json';
 import * as React from 'react';
-import * as ReactDOM from 'react-dom';
 import App from './App';
 
-it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<App />, div);
-  ReactDOM.unmountComponentAtNode(div);
+
+describe('App', () => {
+  let app: ShallowWrapper<App>;
+  beforeEach(() => {
+    app = shallow(<App />);
+  });
+
+  it('should render', () => {
+    expect(shallowToJson(app)).toMatchSnapshot();
+  });
 });

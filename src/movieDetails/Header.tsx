@@ -1,9 +1,10 @@
 import * as React from 'react';
 import { Link } from 'react-router-dom';
 import { Badge, Button, Card, CardText, CardTitle, Col, Container, Row } from 'reactstrap';
+import { IMovie } from '../core/interfaces';
 import './Header.scss';
 
-export default (props: { movie: any }) => {
+export default (props: { movie: IMovie }) => {
   return (
     <Container fluid={true} className="movie-details-header">
       <Row className="h-100">
