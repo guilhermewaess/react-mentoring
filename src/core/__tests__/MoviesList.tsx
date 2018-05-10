@@ -38,6 +38,11 @@ describe('MoviesList', () => {
       const noFilmsFound = component.find('NoFilmsFound').shallow();
       expect(shallowToJson(noFilmsFound)).toMatchSnapshot();
     });
+    it('should render no films found text', () => {
+      const noFilmsFound = component.find('NoFilmsFound').shallow();
+      const text = noFilmsFound.text();
+      expect(text).toEqual('No films found');
+    });
   });
   describe('when have movies', () => {
     beforeEach(() => {
