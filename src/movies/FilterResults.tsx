@@ -18,19 +18,10 @@ const SortBy = () => (
   </div>
 );
 
-export default class FilterResults extends React.Component<IProps> {
-  constructor(props: IProps) {
-    super(props);
-  }
-
-  public render() {
-    return (
-      <Container>
-        <Row className="justify-content-between pt-2 pb-2">
-          <MoviesFound movies={this.props.movies} />
-          <SortBy />
-        </Row>
-      </Container>
-    );
-  }
-}
+export default (props: any) =>
+  (<Container>
+    <Row className="justify-content-between pt-2 pb-2">
+      <MoviesFound movies={props.movies} />
+      <SortBy />
+    </Row>
+  </Container>)
