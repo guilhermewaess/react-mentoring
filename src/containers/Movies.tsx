@@ -38,9 +38,11 @@ class MoviesContainer extends React.Component<any> {
     this.search();
   }
 
-  public handleFilterChange(field: string, event: any) {
+  public handleFilterChange(event: any) {
     event.stopPropagation();
-    const filter = { ...this.state.filter, [field]: event.target.value };
+    const filter = { 
+      ...this.state.filter, 
+      [event.target.dataset.filterField]: event.target.value };
     this.setState({ filter });
   }
 
@@ -54,12 +56,14 @@ class MoviesContainer extends React.Component<any> {
 
   public render() {
     const onSearch = this.search.bind(this);
+    const onFilterChange = this.handleFilterChange.bind(this);
     return (
       <div className="w-100 h-100">
         {JSON.stringify(this.state)}
         <Header
-          handleSearchChange={this.handleFilterChange.bind(this, 'search')}
+          handleFilterChange={onFilterChange}
           onSearch={onSearch}
+          filter={this.state.filter}
         />
         <FilterResults movies={this.props.movies} />
         <MoviesList movies={this.props.movies} />

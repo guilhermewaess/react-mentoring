@@ -1,0 +1,18 @@
+.search-by {
+  .search-by-button {
+    color: white;
+    border-color: white;
+    background-color: rgba(255, 255, 255, 0.171);
+    box-shadow: none !important;
+
+    &.active {
+      background-color: transparent !important;
+      border-color: #5b5b5b !important;
+    }
+  }
+
+  .search-button:hover {
+    background-color: transparent;
+    border-color: #5b5b5b;
+  }
+}

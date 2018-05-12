@@ -1,13 +1,15 @@
 import * as React from 'react';
 import { Button, Col, Container, Row } from 'reactstrap';
 import './Header.scss';
+import SearchBy from './SearchBy';
 
 const SearchInput = (props: any) => (
   <div>
     <label className="mb-1 font-weight-bold">Find your movie</label>
     <div className="shadow-lg search-input">
       <input
-        onChange={props.handleSearchChange}
+        data-filter-field="search"
+        onChange={props.handleFilterChange}
         className="w-100
                 border-0
                 rounded"
@@ -28,12 +30,15 @@ export default (props: any) => {
           className="align-self-center text-white"
         >
           <form onSubmit={props.onSearch}>
-            <SearchInput handleSearchChange={props.handleSearchChange} />
+            <SearchInput handleFilterChange={props.handleFilterChange} />
+            <SearchBy
+              filter={props.filter}
+              handleFilterChange={props.handleFilterChange}
+            />
             <Button
               outline={true}
               className="search-button 
                          mt-1
-                         w-20
                          float-right"
             >
               Search
