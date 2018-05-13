@@ -1,3 +1,4 @@
+import { parse } from 'query-string';
 import * as React from 'react';
 import { connect } from 'react-redux';
 import MoviesList from './../core/MoviesList';
@@ -34,15 +35,23 @@ class MoviesContainer extends React.Component<any> {
     };
   }
 
+  public componentDidUpdate(prevProps: any) {
+    console.log(parse(this.props.location.search)); //tslint:disable-line
+    if (this.props.location !== prevProps.location) {
+      this.updateFilter();
+    }
+  }
+
   public componentDidMount() {
-    this.search();
+    this.updateFilter();
   }
 
   public handleFilterChange(event: any) {
     event.stopPropagation();
-    const filter = { 
-      ...this.state.filter, 
-      [event.target.dataset.filterField]: event.target.value };
+    const filter = {
+      ...this.state.filter,
+      [event.target.dataset.filterField]: event.target.value,
+    };
     this.setState({ filter });
   }
 
@@ -69,6 +78,18 @@ class MoviesContainer extends React.Component<any> {
         <MoviesList movies={this.props.movies} />
       </div>
     );
+  }
+
+  private updateFilter() {
+    const filter = {
+      ...this.state.filter,
+      ...this.getQueryParams(),
+    };
+    this.setState({ filter }, this.search); //tslint:disable-line
+  }
+
+  private getQueryParams() {
+    return parse(this.props.location.search);
   }
 }
 
