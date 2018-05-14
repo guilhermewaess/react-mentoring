@@ -7,7 +7,8 @@ import FilterResults from './../movies/FilterResults';
 import Header from './../movies/Header';
 
 interface IState {
-  filter: { search: string; searchBy: string };
+  sortOptions: string[],
+  filter: { search: string; searchBy: string, sortBy: string };
 }
 
 const mapStateToProps = (state: any) => {
@@ -29,9 +30,11 @@ class MoviesContainer extends React.Component<any> {
   constructor(props: any) {
     super(props);
     this.state = {
+      sortOptions: [],
       filter: {
         search: '',
         searchBy: 'title',
+        sortBy: 'release_date'
       },
     };
     this.historySubscription = this.props.history.listen(this.search.bind(this));
@@ -55,18 +58,24 @@ class MoviesContainer extends React.Component<any> {
     this.updateFilter();
   }
 
-  public onFilterChangeHandler(event: any) {
+  public onFilterChangeHandler(shouldSearch: boolean, event: any) {
     event.stopPropagation();
     const filter = {
       ...this.state.filter,
       [event.target.dataset.filterField]: event.target.value,
     };
-    this.setState({ filter });
+    this.setState({ filter }, () => {
+      if (shouldSearch) {
+        this.updateFilter();
+      }
+    });
+
   }
 
   public render() {
     const onSearch = this.onSearchHandler.bind(this);
     const onFilterChange = this.onFilterChangeHandler.bind(this);
+    const onSortByChange = this.onFilterChangeHandler.bind(this, true);
     return (
       <div className="w-100 h-100">
         {JSON.stringify(this.state)}
@@ -75,7 +84,9 @@ class MoviesContainer extends React.Component<any> {
           onSearch={onSearch}
           filter={this.state.filter}
         />
-        <FilterResults movies={this.props.movies} />
+        <FilterResults movies={this.props.movies}
+          onFilterChange={onSortByChange}
+          filter={this.state.filter} />
         <MoviesList movies={this.props.movies} />
       </div>
     );
