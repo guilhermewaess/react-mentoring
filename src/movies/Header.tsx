@@ -10,6 +10,7 @@ const SearchInput = (props: any) => (
       <input
         data-filter-field="search"
         onChange={props.handleFilterChange}
+        value={props.filter.search}
         className="w-100
                 border-0
                 rounded"
@@ -30,7 +31,7 @@ export default (props: any) => {
           className="align-self-center text-white"
         >
           <form onSubmit={props.onSearch}>
-            <SearchInput handleFilterChange={props.handleFilterChange} />
+            <SearchInput handleFilterChange={props.handleFilterChange} filter={props.filter} />
             <SearchBy
               filter={props.filter}
               handleFilterChange={props.handleFilterChange}

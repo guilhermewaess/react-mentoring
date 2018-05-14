@@ -1,4 +1,4 @@
-import { parse } from 'query-string';
+import { parse, stringify } from 'query-string';
 import * as React from 'react';
 import { connect } from 'react-redux';
 import MoviesList from './../core/MoviesList';
@@ -24,6 +24,7 @@ const mapActionsToProps = (dispatch: any) => {
 
 class MoviesContainer extends React.Component<any> {
   public state: IState;
+  public historySubscription: any;
 
   constructor(props: any) {
     super(props);
@@ -33,20 +34,28 @@ class MoviesContainer extends React.Component<any> {
         searchBy: 'title',
       },
     };
-  }
-
-  public componentDidUpdate(prevProps: any) {
-    console.log(parse(this.props.location.search)); //tslint:disable-line
-    if (this.props.location !== prevProps.location) {
-      this.updateFilter();
-    }
+    this.historySubscription = this.props.history.listen(this.search.bind(this));
   }
 
   public componentDidMount() {
+    const queryParams = parse(this.props.location.search);
+    this.updateFilter(queryParams);
+  }
+
+  public componentWillUnmount() {
+    this.historySubscription();
+  }
+
+  public search() {
+    this.props.getMovies(this.state.filter);
+  }
+
+  public onSearchHandler(event: Event) {
+    event.preventDefault();
     this.updateFilter();
   }
 
-  public handleFilterChange(event: any) {
+  public onFilterChangeHandler(event: any) {
     event.stopPropagation();
     const filter = {
       ...this.state.filter,
@@ -55,17 +64,9 @@ class MoviesContainer extends React.Component<any> {
     this.setState({ filter });
   }
 
-  public search(event?: any) {
-    console.log(event); //tslint:disable-line
-    if (event) {
-      event.preventDefault();
-    }
-    this.props.getMovies(this.state.filter);
-  }
-
   public render() {
-    const onSearch = this.search.bind(this);
-    const onFilterChange = this.handleFilterChange.bind(this);
+    const onSearch = this.onSearchHandler.bind(this);
+    const onFilterChange = this.onFilterChangeHandler.bind(this);
     return (
       <div className="w-100 h-100">
         {JSON.stringify(this.state)}
@@ -80,16 +81,20 @@ class MoviesContainer extends React.Component<any> {
     );
   }
 
-  private updateFilter() {
+  private updateFilter(queryParams?: any) {
     const filter = {
       ...this.state.filter,
-      ...this.getQueryParams(),
+      ...queryParams,
     };
-    this.setState({ filter }, this.search); //tslint:disable-line
+
+    this.setState({ filter }, this.updateQueryStringParams);
   }
 
-  private getQueryParams() {
-    return parse(this.props.location.search);
+  private updateQueryStringParams() {
+    this.props.history.push({
+      pathname: '/movies',
+      search: stringify(this.state.filter)
+    })
   }
 }
 
