@@ -1,33 +1,35 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`App should render 1`] = `
-<Container
-  className="p-0 m-0 fixed-top"
-  fluid={true}
-  tag="div"
->
-  <ErrorBoundary>
-    <BrowserRouter>
-      <div
-        className="app"
-      >
-        <Switch>
-          <Route
-            component={[Function]}
-            path="/movies"
-          />
-          <Route
-            component={[Function]}
-            path="/movie-details"
-          />
-          <Redirect
-            from="/"
-            push={false}
-            to="/movies"
-          />
-        </Switch>
-      </div>
-    </BrowserRouter>
-  </ErrorBoundary>
-</Container>
+<Provider>
+  <Container
+    className="p-0 m-0 fixed-top"
+    fluid={true}
+    tag="div"
+  >
+    <ErrorBoundary>
+      <BrowserRouter>
+        <div
+          className="app"
+        >
+          <Switch>
+            <Route
+              component={[Function]}
+              path="/movies"
+            />
+            <Route
+              component={[Function]}
+              path="/movie-details"
+            />
+            <Redirect
+              from="/"
+              push={false}
+              to="/movies"
+            />
+          </Switch>
+        </div>
+      </BrowserRouter>
+    </ErrorBoundary>
+  </Container>
+</Provider>
 `;

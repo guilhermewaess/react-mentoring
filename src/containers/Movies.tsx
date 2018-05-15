@@ -27,7 +27,7 @@ const mapActionsToProps = (dispatch: any) => {
   };
 };
 
-class MoviesContainer extends React.Component<any> {
+class MoviesContainer extends React.Component<any,any> {
   public state: IState;
   public historySubscription: any;
 
@@ -113,4 +113,4 @@ class MoviesContainer extends React.Component<any> {
   }
 }
 
-export default connect(mapStateToProps, mapActionsToProps)(MoviesContainer);
+export default connect<{any}, any, any, any>(mapStateToProps, mapActionsToProps)(MoviesContainer);

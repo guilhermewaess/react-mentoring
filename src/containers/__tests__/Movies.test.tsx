@@ -1,88 +1,62 @@
 import { shallow, ShallowWrapper } from 'enzyme';
-import { shallowToJson } from 'enzyme-to-json';
 import * as React from 'react';
-import Movies from './../Movies';
+import * as configureStore from 'redux-mock-store';
+import MoviesContainer from './../Movies';
 
-describe('Movies', () => {
-  let component: ShallowWrapper;
+// jest.unmock('redux-mock-store');
+
+describe('MoviesContainer', () => {
+  let component: ShallowWrapper<any, any>;
+  let props: any;
+  let historySubscriptionCallback: any;
+  let store: any;
+
+  const helper = {
+    createProps() {
+      historySubscriptionCallback = jest.fn();
+      const propsObject = {
+        history: {
+          listen: jest.fn(),
+          push: jest.fn()
+        },
+        location: { search: '?search=abc' },
+        getMovies: jest.fn(),
+        movies: []
+      };
+
+      propsObject.history.listen.mockReturnValue(historySubscriptionCallback)
+
+      return propsObject;
+    }
+  }
 
   beforeEach(() => {
-    component = shallow(<Movies />);
+    props = helper.createProps();
+    store = configureStore()({});
+    component = shallow(<MoviesContainer store={store} {...props} />).dive();
   });
 
   describe('when construct', () => {
-    it('should have state', () => {
+    it('should have state updated with query params', () => {
       expect(component.state()).toEqual({
-        movies: [
-          {
-            budget: 0,
-            genres: ['Action', 'Adventure', 'Science Fiction'],
-            id: 447365,
-            overview:
-              "The third film based on Marvel's Guardians of the Galaxy.",
-            poster_path:
-              'https://image.tmdb.org/t/p/w500/ldoY4fTZkGISMidNw60GHoNdgP8.jpg',
-            release_date: '2020-05-01',
-            revenue: 0,
-            runtime: null,
-            tagline: '',
-            title: 'Guardians of the Galaxy Vol. 3',
-            vote_average: 0,
-            vote_count: 9,
-          },
-          {
-            budget: 0,
-            genres: ['Action', 'Adventure', 'Science Fiction'],
-            id: 447366,
-            overview:
-              "The third film based on Marvel's Guardians of the Galaxy.",
-            poster_path:
-              'https://image.tmdb.org/t/p/w500/ldoY4fTZkGISMidNw60GHoNdgP8.jpg',
-            release_date: '2020-05-01',
-            revenue: 0,
-            runtime: null,
-            tagline: '',
-            title: 'Guardians of the Galaxy Vol. 3',
-            vote_average: 0,
-            vote_count: 9,
-          },
-          {
-            budget: 0,
-            genres: ['Action', 'Adventure', 'Science Fiction'],
-            id: 447367,
-            overview:
-              "The third film based on Marvel's Guardians of the Galaxy.",
-            poster_path:
-              'https://image.tmdb.org/t/p/w500/ldoY4fTZkGISMidNw60GHoNdgP8.jpg',
-            release_date: '2020-05-01',
-            revenue: 0,
-            runtime: null,
-            tagline: '',
-            title: 'Guardians of the Galaxy Vol. 3',
-            vote_average: 0,
-            vote_count: 9,
-          },
-          {
-            budget: 0,
-            genres: ['Action', 'Adventure', 'Science Fiction'],
-            id: 447368,
-            overview:
-              "The third film based on Marvel's Guardians of the Galaxy.",
-            poster_path:
-              'https://image.tmdb.org/t/p/w500/ldoY4fTZkGISMidNw60GHoNdgP8.jpg',
-            release_date: '2020-05-01',
-            revenue: 0,
-            runtime: null,
-            tagline: '',
-            title: 'Guardians of the Galaxy Vol. 3',
-            vote_average: 0,
-            vote_count: 9,
-          },
-        ],
+        filter: {
+          search: 'abc',
+          searchBy: 'title',
+          sortBy: 'release_date',
+          sortOrder: 'asc'
+        },
       });
     });
-    it('should render', () => {
-      expect(shallowToJson(component)).toMatchSnapshot();
+    it('should subscribe history with search function', () => {
+      const instance = component.instance() as any;
+
+      expect(instance.historySubscription).toEqual(historySubscriptionCallback);
+    });
+    it('should update queryStrings with new filter', () => {
+      expect(props.history.push).toHaveBeenCalledWith({
+        pathname: '/movies',
+        search: 'search=abc&searchBy=title&sortBy=release_date&sortOrder=asc'
+      });
     });
   });
 });
