@@ -54,7 +54,6 @@ class MoviesContainer extends React.Component<any,any> {
   }
 
   public search() {
-    console.log(this.props);
     this.props.getMovies(this.state.filter);
   }
 

@@ -5,11 +5,12 @@ jest.mock('./../../core/store/actions', () => ({
 }));
 
 import { shallow, ShallowWrapper } from 'enzyme';
+import { shallowToJson } from 'enzyme-to-json';
 import * as React from 'react';
 import * as configureStore from 'redux-mock-store';
 import * as reduxPromise from 'redux-promise';
 import { getMovies } from './../../core/store/actions';
-import MoviesContainer from './../Movies';
+import MoviesContainer from './../MoviesContainer';
 
 // jest.unmock('redux-mock-store');
 
@@ -43,6 +44,10 @@ describe('MoviesContainer', () => {
     store = configureStore([reduxPromise])({});
     component = shallow(<MoviesContainer store={store} {...props} />).dive();
     instance = component.instance();
+  });
+
+  it('should render', () => {
+    expect(shallowToJson(component)).toMatchSnapshot();
   });
 
   describe('when construct', () => {
@@ -91,4 +96,63 @@ describe('MoviesContainer', () => {
     });
   });
 
+
+  describe('when call onSearchHandler', () => {
+    let event: any;
+    let updateFilterSpy: any;
+    beforeEach(() => {
+      event = { preventDefault: jest.fn() }
+      updateFilterSpy = jest.spyOn(instance, 'updateFilter');
+      instance.onSearchHandler(event);
+    });
+    afterEach(() => {
+      updateFilterSpy.mockRestore();
+    });
+    it('should preventDefault of event', () => {
+      expect(event.preventDefault).toHaveBeenCalledTimes(1);
+    });
+    it('should update filter', () => {
+      expect(instance.updateFilter).toHaveBeenCalledTimes(1);
+    });
+  });
+
+  describe('when call onFilterChangeHandler', () => {
+    let event: any;
+    let updateFilterSpy: any;
+    beforeEach(() => {
+      event = {
+        stopPropagation: jest.fn(),
+        target: {
+          dataset: { filterField: 'searchBy' },
+          value: 'genre'
+        },
+      };
+      updateFilterSpy = jest.spyOn(instance, 'updateFilter');
+    });
+    afterEach(() => {
+      updateFilterSpy.mockRestore();
+    });
+    describe('with shouldSearch false', () => {
+      beforeEach(() => {
+        instance.onFilterChangeHandler(false, event);
+      });
+      it('should stop event propagation', () => {
+        expect(event.stopPropagation).toHaveBeenCalledTimes(1);
+      });
+      it('should update state with new filter value', () => {
+        expect(component.state().filter.searchBy).toEqual(event.target.value);
+      });
+      it('should not updateFilter', () => {
+        expect(instance.updateFilter).not.toHaveBeenCalled();
+      });
+    });
+    describe('with shouldSearch true', () => {
+      beforeEach(() => {
+        instance.onFilterChangeHandler(true, event);
+      });
+      it('should updateFilter', () => {
+        expect(instance.updateFilter).toHaveBeenCalledTimes(1);
+      });
+    });
+  });
 });

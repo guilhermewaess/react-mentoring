@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MoviesContainer should render 1`] = `
+<div
+  className="w-100 h-100"
+>
+  {"filter":{"search":"abc","searchBy":"title","sortBy":"release_date","sortOrder":"asc"}}
+  <Component
+    filter={
+      Object {
+        "search": "abc",
+        "searchBy": "title",
+        "sortBy": "release_date",
+        "sortOrder": "asc",
+      }
+    }
+    handleFilterChange={[Function]}
+    onSearch={[Function]}
+  />
+  <Component
+    filter={
+      Object {
+        "search": "abc",
+        "searchBy": "title",
+        "sortBy": "release_date",
+        "sortOrder": "asc",
+      }
+    }
+    onFilterChange={[Function]}
+  />
+  <Component />
+</div>
+`;
