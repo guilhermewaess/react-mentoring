@@ -5,9 +5,18 @@ import FilterResults from './../FilterResults';
 
 describe('Movies FilterResults', () => {
   let component: ShallowWrapper;
+  let props: any;
 
   beforeEach(() => {
-    component = shallow(<FilterResults movies={[]} />)
+    props = {
+      filter: {
+        orderBy: 'orderBy',
+        sortBy: 'desc',
+      },
+      onFilterChange: jest.fn(),
+      movies: []
+    }
+    component = shallow(<FilterResults {...props} />)
   });
 
   describe('when construct', () => {
