@@ -1,6 +1,14 @@
+jest.mock('./../../core/store/actions', () => ({
+  getMovies: jest.fn().mockReturnValue({
+    type: 'test'
+  })
+}));
+
 import { shallow, ShallowWrapper } from 'enzyme';
 import * as React from 'react';
 import * as configureStore from 'redux-mock-store';
+import * as reduxPromise from 'redux-promise';
+import { getMovies } from './../../core/store/actions';
 import MoviesContainer from './../Movies';
 
 // jest.unmock('redux-mock-store');
@@ -21,7 +29,6 @@ describe('MoviesContainer', () => {
           push: jest.fn(),
         },
         location: { search: '?search=abc' },
-        getMovies: jest.fn(),
         movies: [],
       };
 
@@ -33,7 +40,7 @@ describe('MoviesContainer', () => {
 
   beforeEach(() => {
     props = helper.createProps();
-    store = configureStore()({});
+    store = configureStore([reduxPromise])({});
     component = shallow(<MoviesContainer store={store} {...props} />).dive();
     instance = component.instance();
   });
@@ -80,7 +87,8 @@ describe('MoviesContainer', () => {
       instance.search();
     });
     it('should call getMovies with current filter', () => {
-      expect(props.getMovies).toHaveBeenCalledWith(component.state().filter);
+      expect(getMovies).toHaveBeenCalledWith(component.state().filter);
     });
   });
+
 });
