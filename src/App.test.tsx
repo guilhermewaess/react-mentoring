@@ -1,9 +1,9 @@
 import { shallow, ShallowWrapper } from 'enzyme';
 import { shallowToJson } from 'enzyme-to-json';
 import * as React from 'react';
-import * as configureStore from 'redux-mock-store';
 import * as reduxPromise from 'redux-promise';
 import App from './App';
+const configureStore = require('redux-mock-store'); //tslint:disable-line
 
 
 describe('App', () => {

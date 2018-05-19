@@ -1,16 +1,20 @@
 jest.mock('./../../core/store/actions', () => ({
   getMovies: jest.fn().mockReturnValue({
-    type: 'test'
-  })
+    type: 'test',
+  }),
 }));
 
 import { shallow, ShallowWrapper } from 'enzyme';
 import { shallowToJson } from 'enzyme-to-json';
 import * as React from 'react';
-import * as configureStore from 'redux-mock-store';
+// import * as configureStore from 'redux-mock-store';
 import * as reduxPromise from 'redux-promise';
 import { getMovies } from './../../core/store/actions';
 import MoviesContainer from './../MoviesContainer';
+
+// work around the lack of definition file
+const configureStore = require('redux-mock-store'); //tslint:disable-line
+
 
 // jest.unmock('redux-mock-store');
 
@@ -96,12 +100,11 @@ describe('MoviesContainer', () => {
     });
   });
 
-
   describe('when call onSearchHandler', () => {
     let event: any;
     let updateFilterSpy: any;
     beforeEach(() => {
-      event = { preventDefault: jest.fn() }
+      event = { preventDefault: jest.fn() };
       updateFilterSpy = jest.spyOn(instance, 'updateFilter');
       instance.onSearchHandler(event);
     });
@@ -124,7 +127,7 @@ describe('MoviesContainer', () => {
         stopPropagation: jest.fn(),
         target: {
           dataset: { filterField: 'searchBy' },
-          value: 'genre'
+          value: 'genre',
         },
       };
       updateFilterSpy = jest.spyOn(instance, 'updateFilter');

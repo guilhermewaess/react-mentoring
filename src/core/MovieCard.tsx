@@ -18,7 +18,7 @@ const MovieGenres = ({ genres }: { genres: string[] }) => (
 
 export default ({ movie }: any) => (
   <div className="movie-card">
-    <NavLink to={`movie-details/${movie.id}`}>
+    <NavLink  to={`/movie-details/${movie.id}`}>
       <Card>
         <CardImg
           top={true}
