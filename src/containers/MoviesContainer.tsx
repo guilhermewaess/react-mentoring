@@ -78,7 +78,7 @@ class MoviesContainer extends React.Component<any,any> {
 
   public render() {
     const onSearch = this.onSearchHandler.bind(this);
-    const onFilterChange = this.onFilterChangeHandler.bind(this);
+    const onFilterChange = this.onFilterChangeHandler.bind(this, false);
     const onSortOrderByChange = this.onFilterChangeHandler.bind(this, true);
     return (
       <div className="w-100 h-100">

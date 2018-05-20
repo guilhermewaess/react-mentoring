@@ -59,6 +59,7 @@ class MovieDetails extends React.Component<any, any> {
     const urlParamId = Number(props.match.params.id);
     if (this.state.movie.id !== urlParamId) {
       this.updateMovieFromStore(urlParamId);
+      this.getMoviesByGenres();
     }
   }
 

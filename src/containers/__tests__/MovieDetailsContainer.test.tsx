@@ -14,7 +14,7 @@ import * as reduxPromise from 'redux-promise';
 import { IMovie } from '../../core/interfaces';
 import { getMovies } from './../../core/store/actions';
 import { getMovieById } from './../../services/moviesService';
-import MovieDetails from './../MovieDetails';
+import MovieDetails from './../MovieDetailsContainer';
 const configureStore = require('redux-mock-store'); //tslint:disable-line
 
 describe('MovieDetailsContainer', () => {
