@@ -25,6 +25,45 @@ exports[`Movies FilterResults when construct should render MoviesFound properly 
 </Col>
 `;
 
+exports[`Movies FilterResults when construct should render OrderBy properly 1`] = `
+<Col
+  tag="div"
+  widths={
+    Array [
+      "xs",
+      "sm",
+      "md",
+      "lg",
+      "xl",
+    ]
+  }
+  xs="auto"
+>
+  Order by:
+   
+  <select
+    className="rounded"
+    data-filter-field="sortOrder"
+    id="order-by-select"
+    onChange={[MockFunction]}
+    value="orderBy"
+  >
+    <option
+      key="asc-0"
+      value="asc"
+    >
+      asc
+    </option>
+    <option
+      key="desc-1"
+      value="desc"
+    >
+      desc
+    </option>
+  </select>
+</Col>
+`;
+
 exports[`Movies FilterResults when construct should render SortyBy properly 1`] = `
 <Col
   tag="div"

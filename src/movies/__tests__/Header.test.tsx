@@ -26,9 +26,5 @@ describe('Movies Header', () => {
       const searchInput = component.find('SearchInput').shallow();
       expect(shallowToJson(searchInput)).toMatchSnapshot();
     });
-    it('should render SearchBy properly', () => {
-      const searchBy = component.find('SearchBy').shallow();
-      expect(shallowToJson(searchBy)).toMatchSnapshot();
-    });
   });
 });

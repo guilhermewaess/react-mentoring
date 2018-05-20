@@ -31,5 +31,9 @@ describe('Movies FilterResults', () => {
       const sortBy = component.find('SortBy').shallow();
       expect(shallowToJson(sortBy)).toMatchSnapshot();
     });
+    it('should render OrderBy properly', () => {
+      const orderBy = component.find('OrderBy').shallow();
+      expect(shallowToJson(orderBy)).toMatchSnapshot();
+    });
   });
 });

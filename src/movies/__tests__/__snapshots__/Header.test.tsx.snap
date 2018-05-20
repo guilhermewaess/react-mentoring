@@ -1,53 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Movies Header when construct should render SearchBy properly 1`] = `
-<div
-  className="search-by mt-2 float-left"
->
-  <Label
-    tag="label"
-    widths={
-      Array [
-        "xs",
-        "sm",
-        "md",
-        "lg",
-        "xl",
-      ]
-    }
-  >
-    Search By: 
-  </Label>
-  <ButtonGroup
-    className="ml-2"
-    role="group"
-    size="sm"
-    tag="div"
-  >
-    <Button
-      className="search-by-button "
-      color="secondary"
-      data-filter-field="searchBy"
-      onClick={[MockFunction]}
-      tag="button"
-      value="title"
-    >
-      TITLE
-    </Button>
-    <Button
-      className="search-by-button "
-      color="secondary"
-      data-filter-field="searchBy"
-      onClick={[MockFunction]}
-      tag="button"
-      value="genres"
-    >
-      GENRE
-    </Button>
-  </ButtonGroup>
-</div>
-`;
-
 exports[`Movies Header when construct should render SearchInput properly 1`] = `
 <div>
   <label

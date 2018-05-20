@@ -71,10 +71,8 @@ describe('MovieDetailsContainer', () => {
       expect(getMovieById).toHaveBeenCalledWith(Number(props.match.params.id));
     });
     describe('and service resolve with success', () => {
-      it('should setState with movie', async done => {
-        await component.update();
+      it('should setState with movie', () => {
         expect(component.state().movie).toEqual(movie1);
-        done();
       });
       it('should get moviesByGenres', () => {
         expect(getMovies).toHaveBeenCalledWith({
