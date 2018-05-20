@@ -15,9 +15,6 @@ import MoviesContainer from './../MoviesContainer';
 // work around the lack of definition file
 const configureStore = require('redux-mock-store'); //tslint:disable-line
 
-
-// jest.unmock('redux-mock-store');
-
 describe('MoviesContainer', () => {
   let component: ShallowWrapper<any, any>;
   let instance: any;

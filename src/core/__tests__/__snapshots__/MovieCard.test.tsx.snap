@@ -7,7 +7,7 @@ exports[`MovieCard when construct should render 1`] = `
   <NavLink
     activeClassName="active"
     ariaCurrent="true"
-    to="movie-details/287947"
+    to="/movie-details/287947"
   >
     <Card
       tag="div"

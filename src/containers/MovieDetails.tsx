@@ -19,7 +19,7 @@ const mapActionsToProps = (dispatch: any) => {
   };
 };
 
-class MovieDetails extends React.Component<any> {
+class MovieDetails extends React.Component<any, any> {
   public state: any;
   public historySubscription: any;
 
@@ -32,17 +32,22 @@ class MovieDetails extends React.Component<any> {
 
   public async componentWillMount() {
     const urlParamId = Number(this.props.match.params.id);
+
     if (this.props.movies.length) {
       this.updateMovieFromStore(urlParamId);
     } else {
-      const movie = await getMovieById(urlParamId);
-      this.setState({ movie }, this.getMoviesByGenres);
+      try {
+        const movie = await getMovieById(urlParamId);
+        this.setState({ movie }, this.getMoviesByGenres);
+      } catch (error) {
+        console.log(error); //tslint:disable-line
+      }
     }
   }
 
   public getMoviesByGenres() {
     const filter = {
-      filter: this.state.movie.genres.toString(),
+      search: this.state.movie.genres[0],
       searchBy: 'genres',
       sortBy: 'release_date',
       sortOrder: 'asc',
@@ -62,7 +67,7 @@ class MovieDetails extends React.Component<any> {
   }
 
   public updateMovieFromStore(movieId: number) {
-    const movie = this.getMovieFromStore(movieId);
+    const movie = this.getMovieFromStore(movieId);    
     this.setState({ movie });
   }
 
