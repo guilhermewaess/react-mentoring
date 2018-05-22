@@ -40,6 +40,7 @@ class MovieDetails extends React.Component<any, any> {
         const movie = await getMovieById(urlParamId);
         this.setState({ movie }, this.getMoviesByGenres);
       } catch (error) {
+        /* istanbul ignore next */ 
         console.log(error); //tslint:disable-line
       }
     }

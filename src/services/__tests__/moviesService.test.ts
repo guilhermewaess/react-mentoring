@@ -1,6 +1,6 @@
 jest.mock('axios');
 import axios from 'axios';
-import { getMovies, getMovieById } from '../moviesService';
+import { getMovieById, getMovies } from '../moviesService';
 
 describe('moviesService', () => {
   const baseUrl = 'http://react-cdp-api.herokuapp.com';

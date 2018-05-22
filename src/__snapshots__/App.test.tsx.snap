@@ -4,43 +4,44 @@ exports[`App should render 1`] = `
 <Provider
   store={
     Object {
-      "clearActions": [Function],
-      "dispatch": [Function],
-      "getActions": [Function],
-      "getState": [Function],
-      "replaceReducer": [Function],
-      "subscribe": [Function],
+      "dispatch": [MockFunction],
+      "getState": [MockFunction],
+      "subscribe": [MockFunction],
     }
   }
 >
-  <Container
-    className="p-0 m-0 fixed-top"
-    fluid={true}
-    tag="div"
+  <PersistGate
+    loading={null}
   >
-    <ErrorBoundary>
-      <BrowserRouter>
-        <div
-          className="app"
-        >
-          <Switch>
-            <Route
-              component={[Function]}
-              path="/movies"
-            />
-            <Route
-              component={[Function]}
-              path="/movie-details"
-            />
-            <Redirect
-              from="/"
-              push={false}
-              to="/movies"
-            />
-          </Switch>
-        </div>
-      </BrowserRouter>
-    </ErrorBoundary>
-  </Container>
+    <Container
+      className="p-0 m-0 fixed-top"
+      fluid={true}
+      tag="div"
+    >
+      <ErrorBoundary>
+        <BrowserRouter>
+          <div
+            className="app"
+          >
+            <Switch>
+              <Route
+                component={[Function]}
+                path="/movies"
+              />
+              <Route
+                component={[Function]}
+                path="/movie-details"
+              />
+              <Redirect
+                from="/"
+                push={false}
+                to="/movies"
+              />
+            </Switch>
+          </div>
+        </BrowserRouter>
+      </ErrorBoundary>
+    </Container>
+  </PersistGate>
 </Provider>
 `;
