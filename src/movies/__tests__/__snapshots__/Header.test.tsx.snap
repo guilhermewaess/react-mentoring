@@ -14,8 +14,11 @@ exports[`Movies Header when construct should render SearchInput properly 1`] = `
       className="w-100
                 border-0
                 rounded"
+      data-filter-field="search"
+      onChange={[MockFunction]}
       placeholder="Search your movie"
       type="text"
+      value="searchValue"
     />
   </div>
 </div>
@@ -55,18 +58,36 @@ exports[`Movies Header when construct should render component 1`] = `
         }
       }
     >
-      <SearchInput />
-      <Button
-        className="search-button 
-                         mt-1
-                         w-20
-                         float-right"
-        color="secondary"
-        outline={true}
-        tag="button"
+      <form
+        onSubmit={[MockFunction]}
       >
-        Search
-      </Button>
+        <SearchInput
+          filter={
+            Object {
+              "search": "searchValue",
+            }
+          }
+          handleFilterChange={[MockFunction]}
+        />
+        <SearchBy
+          filter={
+            Object {
+              "search": "searchValue",
+            }
+          }
+          handleFilterChange={[MockFunction]}
+        />
+        <Button
+          className="search-button 
+                         mt-1
+                         float-right"
+          color="secondary"
+          outline={true}
+          tag="button"
+        >
+          Search
+        </Button>
+      </form>
     </Col>
   </Row>
 </Container>

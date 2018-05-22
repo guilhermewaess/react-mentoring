@@ -1,38 +1,199 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Movies FilterResults when construct should render MoviesFound properly 1`] = `
-<div>
+<Col
+  tag="div"
+  widths={
+    Array [
+      "xs",
+      "sm",
+      "md",
+      "lg",
+      "xl",
+    ]
+  }
+  xs={
+    Object {
+      "offset": 1,
+      "size": 1,
+    }
+  }
+>
+   
   0
    Movies found
-</div>
+</Col>
+`;
+
+exports[`Movies FilterResults when construct should render OrderBy properly 1`] = `
+<Col
+  tag="div"
+  widths={
+    Array [
+      "xs",
+      "sm",
+      "md",
+      "lg",
+      "xl",
+    ]
+  }
+  xs="auto"
+>
+  Order by:
+   
+  <select
+    className="rounded"
+    data-filter-field="sortOrder"
+    id="order-by-select"
+    onChange={[MockFunction]}
+    value="orderBy"
+  >
+    <option
+      key="asc-0"
+      value="asc"
+    >
+      asc
+    </option>
+    <option
+      key="desc-1"
+      value="desc"
+    >
+      desc
+    </option>
+  </select>
+</Col>
 `;
 
 exports[`Movies FilterResults when construct should render SortyBy properly 1`] = `
-<div>
+<Col
+  tag="div"
+  widths={
+    Array [
+      "xs",
+      "sm",
+      "md",
+      "lg",
+      "xl",
+    ]
+  }
+  xs="auto"
+>
   Sort by:
+   
   <select
-    id=""
-    name=""
+    className="rounded"
+    data-filter-field="sortBy"
+    id="sort-by-select"
+    onChange={[MockFunction]}
+    value="desc"
   >
-    <option>
-      Release
+    <option
+      key="id-0"
+      value="id"
+    >
+      id
+    </option>
+    <option
+      key="title-1"
+      value="title"
+    >
+      title
+    </option>
+    <option
+      key="tagline-2"
+      value="tagline"
+    >
+      tagline
+    </option>
+    <option
+      key="vote_average-3"
+      value="vote_average"
+    >
+      vote_average
+    </option>
+    <option
+      key="vote_count-4"
+      value="vote_count"
+    >
+      vote_count
+    </option>
+    <option
+      key="release_date-5"
+      value="release_date"
+    >
+      release_date
+    </option>
+    <option
+      key="poster_path-6"
+      value="poster_path"
+    >
+      poster_path
+    </option>
+    <option
+      key="overview-7"
+      value="overview"
+    >
+      overview
+    </option>
+    <option
+      key="budget-8"
+      value="budget"
+    >
+      budget
+    </option>
+    <option
+      key="revenue-9"
+      value="revenue"
+    >
+      revenue
     </option>
   </select>
-</div>
+</Col>
 `;
 
 exports[`Movies FilterResults when construct should render component 1`] = `
 <Container
+  fluid={true}
   tag="div"
 >
   <Row
-    className="justify-content-between pt-2 pb-2"
+    className="pt-2 pb-2"
     tag="div"
   >
     <MoviesFound
       movies={Array []}
     />
-    <SortBy />
+    <Col
+      tag="div"
+      widths={
+        Array [
+          "xs",
+          "sm",
+          "md",
+          "lg",
+          "xl",
+        ]
+      }
+      xs="7"
+    />
+    <SortBy
+      filter={
+        Object {
+          "orderBy": "orderBy",
+          "sortBy": "desc",
+        }
+      }
+      onFilterChange={[MockFunction]}
+    />
+    <OrderBy
+      filter={
+        Object {
+          "orderBy": "orderBy",
+          "sortBy": "desc",
+        }
+      }
+      onFilterChange={[MockFunction]}
+    />
   </Row>
 </Container>
 `;

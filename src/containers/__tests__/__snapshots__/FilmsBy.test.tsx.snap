@@ -4,7 +4,9 @@ exports[`FilmsBy when construct should render 1`] = `
 <div
   className="text-center font-weight-bold pt-2 pb-2"
 >
-  Films by 
-  Action
+  Films by:
+   
+   
+  Action - Adventure - Fantasy - Science Fiction
 </div>
 `;

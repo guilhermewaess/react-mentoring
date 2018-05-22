@@ -1,3 +1,5 @@
+import { ActionTypes } from "../store/actions";
+
 export interface IMovie {
   budget: number;
   genres: string[];
@@ -19,4 +21,9 @@ export interface ICommonState {
 
 export interface ICommonProps {
   movie: IMovie;
+}
+
+export interface IAction {
+  type: ActionTypes,
+  payload: any
 }

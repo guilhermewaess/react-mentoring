@@ -1,15 +1,15 @@
-.movies-header{
+.movies-header {
   height: 400px;
   background: url('/background-header.jpg') no-repeat center;
   background-size: cover;
 
-  .search-input{
-    input[type="text"]{
+  .search-input {
+    input[type='text'] {
       height: 35px;
     }
   }
 
-  .search-button{
+  .search-button {
     width: 170px;
     color: white;
     border-color: white;
@@ -17,8 +17,10 @@
     box-shadow: none;
   }
 
-  .search-button:hover{
+  .search-button:hover {
     background-color: transparent;
-    border-color: #5B5B5B;
+    border-color: #5b5b5b;
   }
+
+  
 }

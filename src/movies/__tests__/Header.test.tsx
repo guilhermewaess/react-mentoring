@@ -5,9 +5,17 @@ import Header from './../Header';
 
 describe('Movies Header', () => {
   let component: ShallowWrapper;
+  let props: any;
 
   beforeEach(() => {
-    component = shallow(<Header />)
+    props = {
+      onSearch: jest.fn(),
+      handleFilterChange: jest.fn(),
+      filter: {
+        search: 'searchValue'
+      }
+    }
+    component = shallow(<Header {...props} />)
   });
 
   describe('when construct', () => {

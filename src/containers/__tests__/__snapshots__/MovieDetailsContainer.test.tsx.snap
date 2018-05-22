@@ -1,0 +1,104 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MovieDetailsContainer when there is movies on store should render component 1`] = `
+<div
+  className="w-100 h-100"
+>
+  <Component
+    movie={
+      Object {
+        "budget": 10,
+        "genres": Array [
+          "Action",
+          "Adventure",
+          "Fantasy",
+          "Science Fiction",
+        ],
+        "id": 100,
+        "overview": "We all...",
+        "poster_path": "https://image.tmdb.org/t/p/w500/yUOJHa9XmB1H0iYodG9Kb3YCc9T.jpg",
+        "release_date": "2019-04-05",
+        "revenue": 0,
+        "runtime": null,
+        "tagline": "",
+        "title": "Shazam!",
+        "vote_average": 0,
+        "vote_count": 5,
+      }
+    }
+  />
+  <Component
+    movie={
+      Object {
+        "budget": 10,
+        "genres": Array [
+          "Action",
+          "Adventure",
+          "Fantasy",
+          "Science Fiction",
+        ],
+        "id": 100,
+        "overview": "We all...",
+        "poster_path": "https://image.tmdb.org/t/p/w500/yUOJHa9XmB1H0iYodG9Kb3YCc9T.jpg",
+        "release_date": "2019-04-05",
+        "revenue": 0,
+        "runtime": null,
+        "tagline": "",
+        "title": "Shazam!",
+        "vote_average": 0,
+        "vote_count": 5,
+      }
+    }
+  />
+  <Component
+    movies={
+      Array [
+        Object {
+          "budget": 10,
+          "genres": Array [
+            "Action",
+            "Adventure",
+            "Fantasy",
+            "Science Fiction",
+          ],
+          "id": 100,
+          "overview": "We all...",
+          "poster_path": "https://image.tmdb.org/t/p/w500/yUOJHa9XmB1H0iYodG9Kb3YCc9T.jpg",
+          "release_date": "2019-04-05",
+          "revenue": 0,
+          "runtime": null,
+          "tagline": "",
+          "title": "Shazam!",
+          "vote_average": 0,
+          "vote_count": 5,
+        },
+        Object {
+          "budget": 10,
+          "genres": Array [
+            "Action",
+            "Adventure",
+            "Fantasy",
+            "Science Fiction",
+          ],
+          "id": 200,
+          "overview": "We all...",
+          "poster_path": "https://image.tmdb.org/t/p/w500/yUOJHa9XmB1H0iYodG9Kb3YCc9T.jpg",
+          "release_date": "2019-04-05",
+          "revenue": 0,
+          "runtime": null,
+          "tagline": "",
+          "title": "Shazam!",
+          "vote_average": 0,
+          "vote_count": 5,
+        },
+      ]
+    }
+  />
+</div>
+`;
+
+exports[`MovieDetailsContainer when there is no movies on store should render loading 1`] = `
+<div>
+  Loading...
+</div>
+`;
