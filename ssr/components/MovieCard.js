@@ -37,11 +37,5 @@ export default ({ movie }) => (
         </CardSubtitle>
       </CardBody>
     </Card>
-    {/* </NavLink> */}
-    <style jsx>{`
-      .movie-card {
-        background-color: black;
-      }
-    `}</style>
   </div>
 );

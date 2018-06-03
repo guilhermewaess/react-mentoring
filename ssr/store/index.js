@@ -11,15 +11,6 @@ const persistConfig = {
   storage,
 };
 
-// const persistedReducer = persistReducer(persistConfig, reducers);
-
-// const store = createStore(
-//   reducers,
-//   {},
-//   applyMiddleware(logger, reduxPromise),
-// );
-// const persistor = persistStore(store);
-console.log(reduxPromise)
 const store = createStore(reducers, {}, composeWithDevTools(applyMiddleware(reduxPromise)))
 
 export { store, persistor };

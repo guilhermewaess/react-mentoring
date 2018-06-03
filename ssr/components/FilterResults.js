@@ -49,7 +49,7 @@ const OrderBy = (props) => (
       id="order-by-select"
       data-filter-field="sortOrder"
       onChange={props.onFilterChange}
-      value={props.filter.orderBy}>
+      value={props.filter.sortOrder}>
       {orderOptions.map((option, index) => (
         <option key={`${option}-${index}`} value={option}>
           {option}

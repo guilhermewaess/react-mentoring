@@ -29,7 +29,6 @@ const mapActionsToProps = dispatch => {
 
 class Movies extends React.Component {
   static getInitialProps({ query, url }) {
-    console.log('getInitialProps');
     const filter = { ...defaultFilter, ...query };
     return { filter };
   }
