@@ -6,11 +6,6 @@ import storage from 'redux-persist/lib/storage';
 import reduxPromise from 'redux-promise';
 import { reducers } from './reducers';
 
-const persistConfig = {
-  key: 'state',
-  storage,
-};
-
 const store = createStore(reducers, {}, composeWithDevTools(applyMiddleware(reduxPromise)))
 
 export { store, persistor };
