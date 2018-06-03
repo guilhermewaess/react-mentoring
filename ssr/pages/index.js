@@ -1,29 +1,27 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
-import Head from 'next/head'
-import React from 'react'
-import {connect} from 'react-redux'
-import MoviesContainer from '../containers/MoviesContainer';
+// import 'bootstrap/dist/css/bootstrap.min.css';
+import Head from 'next/head';
+import React from 'react';
+import { connect } from 'react-redux';
 import './_app.scss';
+import Router from 'next/router';
 
 class Index extends React.Component {
-  static getInitialProps ({ reduxStore, req }) {
-    const isServer = !!req
-
-    return {}
+  static getInitialProps(props) {
+    const isServer = !!props.req;
+    console.log(props);
+    return {};
   }
 
-  render () {
+  componentDidMount() {
+    Router.push('/movies');
+  }
+
+  render() {
     return (
       <div>
-        <Head>
-          <title>My page title</title>
-          <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-        </Head>
-
-        <MoviesContainer></MoviesContainer>
       </div>
-    )
+    );
   }
 }
 
-export default connect()(Index)
+export default connect()(Index);

@@ -5,40 +5,61 @@ import { getMovies } from './../store/actions';
 import MoviesList from './../components/MoviesList';
 import Header from './../components/MoviesHeader';
 import FilterResults from './../components/FilterResults';
-import Router from 'next/router'
+import Router from 'next/router';
+import * as R from 'ramda';
 
+const defaultFilter = {
+  search: '',
+  searchBy: 'title',
+  sortBy: 'release_date',
+  sortOrder: 'asc',
+};
 
+const mapStateToProps = state => {
+  return {
+    movies: state.movies,
+  };
+};
 
+const mapActionsToProps = dispatch => {
+  return {
+    getMovies: filter => dispatch(getMovies(filter)),
+  };
+};
 
-class MoviesContainer extends React.Component {
-  state;
-  // historySubscription;
+class Movies extends React.Component {
+  static getInitialProps({ query, url }) {
+    console.log('getInitialProps');
+    const filter = { ...defaultFilter, ...query };
+    return { filter };
+  }
 
   constructor(props) {
     super(props);
-    console.log('eita', props)
     this.state = {
-      // filter: {
-      //   search: '',
-      //   searchBy: 'title',
-      //   sortBy: 'release_date',
-      //   sortOrder: 'asc',
-      // },
       filter: props.filter,
     };
-    // this.historySubscription = this.props.history.listen(
-    //   this.search.bind(this),
-    // );
+    Router.onBeforeHistoryChange = this.search.bind(this);
   }
 
   componentDidMount() {
-    const queryParams = parse(this.state.filter);
-    this.updateFilter(queryParams);
+    this.updateQueryStringParams();
   }
 
-  // componentWillUnmount() {
-  //   this.historySubscription();
-  // }
+  componentWillReceiveProps(props, props2) {
+    if (!R.equals(Router.router.query, this.state.filter)) {
+      this.sincronizeStateWithQueryParams();
+    }
+  }
+
+  componentWillUnmount() {
+    Router.onBeforeHistoryChange = null;
+  }
+
+  sincronizeStateWithQueryParams() {
+    const filter = Router.router.query;
+    this.setState({ filter }, this.updateQueryStringParams);
+  }
 
   search() {
     this.props.getMovies(this.state.filter);
@@ -46,7 +67,7 @@ class MoviesContainer extends React.Component {
 
   onSearchHandler(event) {
     event.preventDefault();
-    this.updateFilter();
+    this.updateQueryStringParams();
   }
 
   onFilterChangeHandler(shouldSearch, event) {
@@ -57,26 +78,15 @@ class MoviesContainer extends React.Component {
     };
     this.setState({ filter }, () => {
       if (shouldSearch) {
-        this.updateFilter();
+        this.updateQueryStringParams();
       }
     });
   }
 
-  updateFilter(queryParams) {
-    const filter = {
-      ...this.state.filter,
-      ...queryParams,
-    };
-
-    this.setState({ filter }, this.updateQueryStringParams);
-  }
-
   updateQueryStringParams() {
-    console.log('aqui', this.props);
-    // this.props.url.push({
-    //   pathname: '/movies',
-    //   search: stringify(this.state.filter),
-    // });
+    const href = `/movies?${stringify(this.state.filter)}`;
+    const as = href;
+    Router.push(href, as, { shallow: true });
   }
 
   render() {
@@ -102,4 +112,4 @@ class MoviesContainer extends React.Component {
   }
 }
 
-export default connect(mapStateToProps, mapActionsToProps)(MoviesContainer);
+export default connect(mapStateToProps, mapActionsToProps)(Movies);
