@@ -1,0 +1,27 @@
+.movie-details-header {
+  height: 400px;
+  background-color: rgba(0, 0, 0, 0.822);
+
+  img {
+    max-width: 100%;
+    max-height: 100%;
+  }
+
+  .search-button {
+    color: white;
+    border-color: white;
+    background-color: rgba(255, 255, 255, 0.171);
+    box-shadow: none;
+  }
+
+  .movie-detail-data {
+    background-color: rgba(0, 0, 0, 0);
+    .badge {
+      font-size: 0.7rem;
+      vertical-align: middle;
+    }
+    .movie-release-date {
+      font-size: 0.7rem;
+    }
+  }
+}

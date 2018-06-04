@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1526837241046" clover="3.2.0">
+  <project timestamp="1526837241047" name="All files">
+    <metrics statements="196" coveredstatements="183" conditionals="24" coveredconditionals="22" methods="61" coveredmethods="59" elements="281" coveredelements="264" complexity="0" loc="196" ncloc="196" packages="8" files="17" classes="17">
+      <package name="src">
+        <metrics statements="13" coveredstatements="13" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <file name="App.tsx" path="C:\projects\react-mentoring\src\App.tsx">
+          <metrics statements="13" coveredstatements="13" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+          <line num="1" count="1" type="stmt"/>
+          <line num="2" count="1" type="stmt"/>
+          <line num="3" count="1" type="stmt"/>
+          <line num="4" count="1" type="stmt"/>
+          <line num="5" count="1" type="stmt"/>
+          <line num="6" count="1" type="stmt"/>
+          <line num="7" count="1" type="stmt"/>
+          <line num="8" count="1" type="stmt"/>
+          <line num="11" count="1" type="stmt"/>
+          <line num="12" count="1" type="stmt"/>
+          <line num="13" count="1" type="stmt"/>
+          <line num="31" count="1" type="stmt"/>
+          <line num="33" count="1" type="stmt"/>
+        </file>
+      </package>
+      <package name="src.containers">
+        <metrics statements="87" coveredstatements="86" conditionals="10" coveredconditionals="10" methods="27" coveredmethods="27"/>
+        <file name="FilmsBy.tsx" path="C:\projects\react-mentoring\src\containers\FilmsBy.tsx">
+          <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+          <line num="1" count="4" type="stmt"/>
+          <line num="4" count="4" type="stmt"/>
+        </file>
+        <file name="MovieDetailsContainer.tsx" path="C:\projects\react-mentoring\src\containers\MovieDetailsContainer.tsx">
+          <metrics statements="41" coveredstatements="40" conditionals="6" coveredconditionals="6" methods="12" coveredmethods="12"/>
+          <line num="1" count="3" type="stmt"/>
+          <line num="2" count="3" type="stmt"/>
+          <line num="4" count="3" type="stmt"/>
+          <line num="5" count="3" type="stmt"/>
+          <line num="6" count="3" type="stmt"/>
+          <line num="7" count="3" type="stmt"/>
+          <line num="8" count="3" type="stmt"/>
+          <line num="10" count="3" type="stmt"/>
+          <line num="11" count="9" type="stmt"/>
+          <line num="16" count="3" type="stmt"/>
+          <line num="17" count="9" type="stmt"/>
+          <line num="18" count="5" type="stmt"/>
+          <line num="22" count="3" type="stmt"/>
+          <line num="27" count="9" type="cond" truecount="2" falsecount="0"/>
+          <line num="28" count="9" type="stmt"/>
+          <line num="33" count="3" type="stmt"/>
+          <line num="34" count="9" type="stmt"/>
+          <line num="36" count="4" type="stmt"/>
+          <line num="37" count="5" type="stmt"/>
+          <line num="40" count="4" type="stmt"/>
+          <line num="41" count="4" type="stmt"/>
+          <line num="43" count="0" type="stmt"/>
+          <line num="48" count="3" type="stmt"/>
+          <line num="49" count="5" type="stmt"/>
+          <line num="55" count="5" type="stmt"/>
+          <line num="58" count="3" type="stmt"/>
+          <line num="59" count="2" type="stmt"/>
+          <line num="60" count="2" type="cond" truecount="2" falsecount="0"/>
+          <line num="61" count="1" type="stmt"/>
+          <line num="62" count="1" type="stmt"/>
+          <line num="66" count="3" type="stmt"/>
+          <line num="67" count="7" type="stmt"/>
+          <line num="70" count="3" type="stmt"/>
+          <line num="71" count="6" type="stmt"/>
+          <line num="72" count="6" type="stmt"/>
+          <line num="75" count="3" type="stmt"/>
+          <line num="76" count="14" type="cond" truecount="2" falsecount="0"/>
+          <line num="77" count="10" type="stmt"/>
+          <line num="85" count="4" type="stmt"/>
+          <line num="87" count="3" type="stmt"/>
+          <line num="89" count="3" type="stmt"/>
+        </file>
+        <file name="MoviesContainer.tsx" path="C:\projects\react-mentoring\src\containers\MoviesContainer.tsx">
+          <metrics statements="44" coveredstatements="44" conditionals="4" coveredconditionals="4" methods="14" coveredmethods="14"/>
+          <line num="1" count="3" type="stmt"/>
+          <line num="2" count="3" type="stmt"/>
+          <line num="3" count="3" type="stmt"/>
+          <line num="4" count="3" type="stmt"/>
+          <line num="5" count="3" type="stmt"/>
+          <line num="6" count="3" type="stmt"/>
+          <line num="7" count="3" type="stmt"/>
+          <line num="18" count="3" type="stmt"/>
+          <line num="19" count="12" type="stmt"/>
+          <line num="24" count="3" type="stmt"/>
+          <line num="25" count="12" type="stmt"/>
+          <line num="26" count="1" type="stmt"/>
+          <line num="30" count="3" type="stmt"/>
+          <line num="35" count="12" type="cond" truecount="2" falsecount="0"/>
+          <line num="36" count="12" type="stmt"/>
+          <line num="44" count="12" type="stmt"/>
+          <line num="47" count="3" type="stmt"/>
+          <line num="48" count="14" type="stmt"/>
+          <line num="49" count="14" type="stmt"/>
+          <line num="52" count="3" type="stmt"/>
+          <line num="53" count="1" type="stmt"/>
+          <line num="56" count="3" type="stmt"/>
+          <line num="57" count="1" type="stmt"/>
+          <line num="60" count="3" type="stmt"/>
+          <line num="61" count="2" type="stmt"/>
+          <line num="62" count="2" type="stmt"/>
+          <line num="65" count="4" type="stmt"/>
+          <line num="66" count="4" type="stmt"/>
+          <line num="67" count="4" type="stmt"/>
+          <line num="71" count="4" type="stmt"/>
+          <line num="72" count="4" type="cond" truecount="2" falsecount="0"/>
+          <line num="73" count="1" type="stmt"/>
+          <line num="79" count="3" type="stmt"/>
+          <line num="80" count="33" type="stmt"/>
+          <line num="81" count="33" type="stmt"/>
+          <line num="82" count="33" type="stmt"/>
+          <line num="83" count="33" type="stmt"/>
+          <line num="99" count="3" type="stmt"/>
+          <line num="100" count="17" type="stmt"/>
+          <line num="105" count="17" type="stmt"/>
+          <line num="108" count="3" type="stmt"/>
+          <line num="109" count="17" type="stmt"/>
+          <line num="114" count="3" type="stmt"/>
+          <line num="116" count="3" type="stmt"/>
+        </file>
+      </package>
+      <package name="src.core">
+        <metrics statements="27" coveredstatements="27" conditionals="6" coveredconditionals="6" methods="10" coveredmethods="10"/>
+        <file name="ErrorBoundary.tsx" path="C:\projects\react-mentoring\src\core\ErrorBoundary.tsx">
+          <metrics statements="11" coveredstatements="11" conditionals="4" coveredconditionals="4" methods="4" coveredmethods="4"/>
+          <line num="1" count="2" type="stmt"/>
+          <line num="7" count="2" type="stmt"/>
+          <line num="11" count="4" type="cond" truecount="2" falsecount="0"/>
+          <line num="12" count="4" type="stmt"/>
+          <line num="15" count="2" type="stmt"/>
+          <line num="16" count="2" type="stmt"/>
+          <line num="19" count="2" type="stmt"/>
+          <line num="20" count="6" type="cond" truecount="2" falsecount="0"/>
+          <line num="21" count="2" type="stmt"/>
+          <line num="24" count="4" type="stmt"/>
+          <line num="26" count="2" type="stmt"/>
+        </file>
+        <file name="MovieCard.tsx" path="C:\projects\react-mentoring\src\core\MovieCard.tsx">
+          <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
+          <line num="1" count="7" type="stmt"/>
+          <line num="2" count="7" type="stmt"/>
+          <line num="3" count="7" type="stmt"/>
+          <line num="11" count="7" type="stmt"/>
+          <line num="13" count="7" type="stmt"/>
+          <line num="15" count="4" type="stmt"/>
+          <line num="19" count="7" type="stmt"/>
+        </file>
+        <file name="MoviesList.tsx" path="C:\projects\react-mentoring\src\core\MoviesList.tsx">
+          <metrics statements="9" coveredstatements="9" conditionals="2" coveredconditionals="2" methods="3" coveredmethods="3"/>
+          <line num="1" count="6" type="stmt"/>
+          <line num="2" count="6" type="stmt"/>
+          <line num="4" count="6" type="stmt"/>
+          <line num="10" count="6" type="stmt"/>
+          <line num="12" count="6" type="stmt"/>
+          <line num="13" count="3" type="cond" truecount="2" falsecount="0"/>
+          <line num="14" count="2" type="stmt"/>
+          <line num="16" count="1" type="stmt"/>
+          <line num="19" count="1" type="stmt"/>
+        </file>
+      </package>
+      <package name="src.core.store">
+        <metrics statements="16" coveredstatements="4" conditionals="4" coveredconditionals="2" methods="3" coveredmethods="1"/>
+        <file name="actions.ts" path="C:\projects\react-mentoring\src\core\store\actions.ts">
+          <metrics statements="5" coveredstatements="4" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="1"/>
+          <line num="1" count="3" type="stmt"/>
+          <line num="3" count="3" type="cond" truecount="2" falsecount="0"/>
+          <line num="4" count="3" type="stmt"/>
+          <line num="7" count="3" type="stmt"/>
+          <line num="8" count="0" type="stmt"/>
+        </file>
+        <file name="index.ts" path="C:\projects\react-mentoring\src\core\store\index.ts">
+          <metrics statements="5" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+          <line num="1" count="0" type="stmt"/>
+          <line num="2" count="0" type="stmt"/>
+          <line num="3" count="0" type="stmt"/>
+          <line num="4" count="0" type="stmt"/>
+          <line num="7" count="0" type="stmt"/>
+        </file>
+        <file name="reducers.ts" path="C:\projects\react-mentoring\src\core\store\reducers.ts">
+          <metrics statements="6" coveredstatements="0" conditionals="2" coveredconditionals="0" methods="1" coveredmethods="0"/>
+          <line num="2" count="0" type="stmt"/>
+          <line num="4" count="0" type="stmt"/>
+          <line num="8" count="0" type="stmt"/>
+          <line num="9" count="0" type="stmt"/>
+          <line num="11" count="0" type="stmt"/>
+          <line num="16" count="0" type="stmt"/>
+        </file>
+      </package>
+      <package name="src.movieDetails">
+        <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <file name="Header.tsx" path="C:\projects\react-mentoring\src\movieDetails\Header.tsx">
+          <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+          <line num="1" count="4" type="stmt"/>
+          <line num="2" count="4" type="stmt"/>
+          <line num="3" count="4" type="stmt"/>
+          <line num="5" count="4" type="stmt"/>
+          <line num="7" count="4" type="stmt"/>
+          <line num="8" count="1" type="stmt"/>
+        </file>
+      </package>
+      <package name="src.movies">
+        <metrics statements="30" coveredstatements="30" conditionals="4" coveredconditionals="4" methods="12" coveredmethods="12"/>
+        <file name="FilterResults.tsx" path="C:\projects\react-mentoring\src\movies\FilterResults.tsx">
+          <metrics statements="12" coveredstatements="12" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="6"/>
+          <line num="1" count="4" type="stmt"/>
+          <line num="2" count="4" type="stmt"/>
+          <line num="8" count="4" type="stmt"/>
+          <line num="21" count="4" type="stmt"/>
+          <line num="26" count="4" type="stmt"/>
+          <line num="27" count="1" type="stmt"/>
+          <line num="30" count="4" type="stmt"/>
+          <line num="39" count="10" type="stmt"/>
+          <line num="48" count="4" type="stmt"/>
+          <line num="57" count="2" type="stmt"/>
+          <line num="66" count="4" type="stmt"/>
+          <line num="67" count="4" type="stmt"/>
+        </file>
+        <file name="Header.tsx" path="C:\projects\react-mentoring\src\movies\Header.tsx">
+          <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+          <line num="1" count="4" type="stmt"/>
+          <line num="2" count="4" type="stmt"/>
+          <line num="3" count="4" type="stmt"/>
+          <line num="4" count="4" type="stmt"/>
+          <line num="6" count="4" type="stmt"/>
+          <line num="24" count="4" type="stmt"/>
+          <line num="25" count="2" type="stmt"/>
+        </file>
+        <file name="SearchBy.tsx" path="C:\projects\react-mentoring\src\movies\SearchBy.tsx">
+          <metrics statements="11" coveredstatements="11" conditionals="4" coveredconditionals="4" methods="4" coveredmethods="4"/>
+          <line num="1" count="5" type="stmt"/>
+          <line num="2" count="5" type="stmt"/>
+          <line num="3" count="5" type="stmt"/>
+          <line num="5" count="5" type="stmt"/>
+          <line num="10" count="5" type="stmt"/>
+          <line num="11" count="2" type="cond" truecount="2" falsecount="0"/>
+          <line num="12" count="1" type="stmt"/>
+          <line num="14" count="1" type="stmt"/>
+          <line num="17" count="5" type="stmt"/>
+          <line num="18" count="1" type="stmt"/>
+          <line num="42" count="5" type="stmt"/>
+        </file>
+      </package>
+      <package name="src.services">
+        <metrics statements="9" coveredstatements="9" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="4"/>
+        <file name="moviesService.ts" path="C:\projects\react-mentoring\src\services\moviesService.ts">
+          <metrics statements="9" coveredstatements="9" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="4"/>
+          <line num="1" count="4" type="stmt"/>
+          <line num="2" count="4" type="stmt"/>
+          <line num="4" count="4" type="stmt"/>
+          <line num="5" count="2" type="stmt"/>
+          <line num="6" count="2" type="stmt"/>
+          <line num="8" count="2" type="stmt"/>
+          <line num="11" count="4" type="stmt"/>
+          <line num="12" count="2" type="stmt"/>
+          <line num="13" count="2" type="stmt"/>
+        </file>
+      </package>
+      <package name="src.views">
+        <metrics statements="8" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <file name="MovieDetailsView.tsx" path="C:\projects\react-mentoring\src\views\MovieDetailsView.tsx">
+          <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+          <line num="1" count="2" type="stmt"/>
+          <line num="2" count="2" type="stmt"/>
+          <line num="3" count="2" type="stmt"/>
+          <line num="5" count="2" type="stmt"/>
+        </file>
+        <file name="MoviesView.tsx" path="C:\projects\react-mentoring\src\views\MoviesView.tsx">
+          <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+          <line num="1" count="2" type="stmt"/>
+          <line num="2" count="2" type="stmt"/>
+          <line num="4" count="2" type="stmt"/>
+          <line num="6" count="2" type="stmt"/>
+        </file>
+      </package>
+    </metrics>
+  </project>
+</coverage>
