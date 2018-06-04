@@ -1,6 +1,7 @@
 # React Mentoring
 
 Client -> client side rendering (with typescript x_x)
+
 Ssr -> Server Side Rendering (without typescript :) )
 
 ##### Next steps:
