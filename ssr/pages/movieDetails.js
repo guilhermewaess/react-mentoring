@@ -5,6 +5,8 @@ import { getMovieById } from './../services/moviesService';
 import Header from './../components/MovieDetailsHeader';
 import MoviesList from './../components/MoviesList';
 import FilmsBy from './../components/FilmsBy';
+import Router from 'next/router';
+
 
 const mapStateToProps = state => {
   return {
@@ -18,39 +20,40 @@ const mapActionsToProps = dispatch => {
   };
 };
 
+const findMovie = (id, movies) => movies.find(movie => movie.id === Number(id));
+
 class MovieDetails extends React.Component {
   state;
   historySubscription;
 
-  static getInitialProps(props) {
-    // const filter = { ...defaultFilter, ...query };
-    // return { filter };
-    console.log(props);
-    return { a: 1 };
+  static async getInitialProps({ query, reduxStore }) {
+    const moviesFromStore = reduxStore.getState().movies;
+    const movieId = query.movie;
+    let movie = null;
+
+    if (moviesFromStore.length) {
+      movie = findMovie(movieId, moviesFromStore);
+    } else {
+      try {
+        movie = await getMovieById(movieId);
+      } catch (error) {
+        /* istanbul ignore next */
+        console.log(error);
+      }
+    }
+
+    return { movie };
   }
 
   constructor(props) {
     super(props);
     this.state = {
-      movie: null,
+      movie: props.movie,
     };
   }
 
   async componentWillMount() {
-    const urlParamId = Number(this.props.match.params.id);
-
-    if (this.props.movies.length) {
-      this.updateMovieFromStore(urlParamId);
-    } else {
-      try {
-        const movie = await getMovieById(urlParamId);
-        this.setState({ movie }, this.getMoviesByGenres);
-      } catch (error) {
-        /* istanbul ignore next */
-
-        console.log(error); //tslint:disable-line
-      }
-    }
+    this.getMoviesByGenres();
   }
 
   getMoviesByGenres() {
@@ -64,19 +67,15 @@ class MovieDetails extends React.Component {
   }
 
   componentWillReceiveProps(props) {
-    const urlParamId = Number(props.match.params.id);
+    const urlParamId = Number(Router.router.query.movie);
     if (this.state.movie.id !== urlParamId) {
       this.updateMovieFromStore(urlParamId);
       this.getMoviesByGenres();
     }
   }
 
-  getMovieFromStore(id) {
-    return this.props.movies.find(movie => movie.id === Number(id));
-  }
-
   updateMovieFromStore(movieId) {
-    const movie = this.getMovieFromStore(movieId);
+    const movie = findMovie(movieId, this.props.movies);
     this.setState({ movie });
   }
 

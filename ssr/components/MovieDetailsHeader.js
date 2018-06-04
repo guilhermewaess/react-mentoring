@@ -9,7 +9,14 @@ import {
   Container,
   Row,
 } from 'reactstrap';
+import Router from 'next/router';
+
 import './styles/MovieDetailsHeader.scss';
+
+const routeToSearch = () =>
+  Router.push({
+    pathname: '/movies',
+  });
 
 export default props => {
   return (
@@ -33,15 +40,9 @@ export default props => {
           </Card>
         </Col>
         <Col xs={1}>
-          {/* <Link to="/"> */}
-            <Button
-              outline={true}
-              className="search-button 
-                         mt-1"
-            >
-              Search
-            </Button>
-          {/* </Link> */}
+          <Button outline={true} className="search-button mt-1" onClick={routeToSearch}>
+            Search
+          </Button>
         </Col>
       </Row>
     </Container>

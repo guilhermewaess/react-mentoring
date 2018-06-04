@@ -8,6 +8,7 @@ import {
   CardTitle,
 } from 'reactstrap';
 import './styles/MovieCard.scss';
+import Link from 'next/link';
 
 const MovieGenres = ({ genres }) => (
   <div>
@@ -21,21 +22,24 @@ const MovieGenres = ({ genres }) => (
 
 export default ({ movie }) => (
   <div className="movie-card">
-    {/* <NavLink to={`/movie-details/${movie.id}`}> */}
-    <Card>
-      <CardImg
-        top={true}
-        width="100%"
-        height="400px"
-        src={movie.poster_path}
-        alt="Movie Image"
-      />
-      <CardBody>
-        <CardTitle>{movie.title}</CardTitle>
-        <CardSubtitle>
-          <MovieGenres genres={movie.genres} />
-        </CardSubtitle>
-      </CardBody>
-    </Card>
+    <Link href={{ pathname: '/movieDetails', query: { movie: movie.id } }}>
+      <a>
+        <Card>
+          <CardImg
+            top={true}
+            width="100%"
+            height="400px"
+            src={movie.poster_path}
+            alt="Movie Image"
+          />
+          <CardBody>
+            <CardTitle>{movie.title}</CardTitle>
+            <CardSubtitle>
+              <MovieGenres genres={movie.genres} />
+            </CardSubtitle>
+          </CardBody>
+        </Card>
+      </a>
+    </Link>
   </div>
 );

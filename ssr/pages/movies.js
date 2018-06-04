@@ -45,7 +45,7 @@ class Movies extends React.Component {
     this.updateQueryStringParams();
   }
 
-  componentWillReceiveProps(props, props2) {
+  componentWillReceiveProps(props) {
     if (!R.equals(Router.router.query, this.state.filter)) {
       this.sincronizeStateWithQueryParams();
     }
@@ -94,7 +94,7 @@ class Movies extends React.Component {
     const onSortOrderByChange = this.onFilterChangeHandler.bind(this, true);
     return (
       <div className="w-100 h-100">
-        {JSON.stringify(this.state)}
+        {/* {JSON.stringify(this.state)} */}
         <Header
           handleFilterChange={onFilterChange}
           onSearch={onSearch}

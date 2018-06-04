@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Button, ButtonGroup, Label } from 'reactstrap';
-// import './SearchBy.scss';
+import './styles/SearchBy.scss';
 
 export default class SearchBy extends React.Component {
   isActive(currentSelected) {

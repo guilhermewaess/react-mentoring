@@ -7,23 +7,21 @@
     max-height: 100%;
   }
 
-  .search-button{
+  .search-button {
     color: white;
     border-color: white;
     background-color: rgba(255, 255, 255, 0.171);
     box-shadow: none;
   }
 
-  .movie-detail-data{
+  .movie-detail-data {
     background-color: rgba(0, 0, 0, 0);
-    .badge{
+    .badge {
       font-size: 0.7rem;
       vertical-align: middle;
     }
-    .movie-release-date{
-      font-size: .7rem;
+    .movie-release-date {
+      font-size: 0.7rem;
     }
   }
-
-  
 }
